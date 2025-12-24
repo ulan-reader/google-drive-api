@@ -452,7 +452,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "google-drive-api"
+name = "google_drive_api_my"
 version = "0.1.0"
 dependencies = [
  "anyhow",
