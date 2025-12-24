@@ -1,6 +1,6 @@
 pub mod auth;
 pub mod drive;
 pub mod error;
-mod http;
-mod token_cache;
-mod sheets;
+pub mod http;
+pub mod token_cache;
+pub mod sheets;
