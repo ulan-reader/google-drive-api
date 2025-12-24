@@ -39,7 +39,7 @@ pub async fn get_access_token(
 
     let claims = Claims {
         iss: &sa.client_email,
-        scope: "https://www.googleapis.com/auth/drive",
+        scope: "https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive",
         aud: &sa.token_uri,
         iat: now,
         exp: now + 3600,
@@ -60,7 +60,7 @@ pub async fn get_access_token(
         .json::<serde_json::Value>()
         .await?;
 
-    println!("Token response: {:#?}", resp); // Временно для отладки
+    // println!("Token response: {:#?}", resp); // Временно для отладки
 
     let token = resp["access_token"]
         .as_str()
@@ -69,3 +69,6 @@ pub async fn get_access_token(
 
     Ok((token, exp))
 }
+
+
+
